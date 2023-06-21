@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- google fonsts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <main>
+        <div>
+            <h1 class="text-3xl font-extrabold text-transparent sm:text-6xl bg-clip-text bg-gradient-to-r from-yellow-300 via-orange-500 to-red-600 text-center mt-20">
+                Easy Weather Forecast.
+              </h1>
+              
+          <p class="max-w-xl mx-auto mt-6 text-lg text-center mb-12">
+            Search by your City Name or Location for getting weather forcast.
+          </p>
+        </div>
+        <section class="max-w-5xl p-6 mx-auto bg-white shadow rounded-xl">
+            <div class="flex mb-0 space-x-4">
+                <div class="flex-1">
+                    <input
+                    id="search-field"
+                    class="w-full h-12 text-sm border-gray-100 rounded-lg px-3"
+                    placeholder="Search for Weather..."
+                    type="text"
+                    onkeyup="getLocation()"
+                    />
+                </div>
+
+<!-- search  -->
+<div >
+    <button onclick="getLocation()" class="inline-flex items-center justify-center w-12 h-12 text-gray-600 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 ">
+      <span class="sr-only">Submit</span>
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+      </svg>
+    </button>
+  </div>
+  
+            </div>
+        </section>
+        <!-- search end  -->
+        <section id="spinner" class="max-w-3xl mx-auto">
+            <div class="flex justify-center my-14">
+                <img src="./images/loader.gif" width="100" alt="" />
+              </div>
+        </section>
+        <section id="weather-container" class="max-w-3xl mx-auto"></section>
+
+    </main>
+    <script src="./js/main.js"></script>
+</body>
+</html>
